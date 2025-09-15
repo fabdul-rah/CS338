@@ -1,2 +1,2 @@
-# cs338
-This repository serves as the homework and assignment submission repo for the CS338 (Computer Security) course.
+# CS338
+This repository is dedicated to homework and assignment submissions for the CS338 (Computer Security) course.
