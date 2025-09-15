@@ -1,0 +1,4 @@
+Feraidon AbdulRahimzai, CS338(Intro to Computer Security), Fall 2025
+
+[09/14/2025]
+I am ready to get to work with kali. I have successfully downloaded all required files and kali is up and running in my UTM.
