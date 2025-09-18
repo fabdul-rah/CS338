@@ -24,7 +24,10 @@ Level 0 -> 1
 
 Steps:
 
-Open readme using command: cat readme
+Open readme using command: 
+```bash 
+cat readme
+```
 
 Password would be displayed for the next level.
 Our password is: ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
@@ -45,7 +48,10 @@ escape character which automatically reverses it, hence we are able
 to open it. Then I reversed the reversed password to get the actual 
 password by using rev again.
 
+
+```bash
 rev - | rev 
+```
 
 Pasword: 263JGJPfgU6LtdEvgfWU1XP5yac29mFx
 
@@ -124,8 +130,9 @@ Steps:
 ![Screenshot](screenshots-bandit/bandit6-2.png)
 
 
-
+```bash
 bandit6@bandit:/$ find -type f -size 33c
+```
 
 this showed me the directory it was in and 
 then I went a directory deeper and did the 
@@ -149,13 +156,13 @@ Steps:
 
 ![Screenshot](screenshots-bandit/bandit7.png)
 
-
+```bash 
 bandit7@bandit:~$ 
 bandit7@bandit:~$ find -type f -name data
 bandit7@bandit:~$ ls
 data.txt
 bandit7@bandit:~$ cat data.txt
-
+```
 
 and then I command f to find the word millionth and its correspondance password
 
@@ -173,7 +180,7 @@ Steps:
 
 
 output:
-
+```bash
 bandit8@bandit:~$ sort data.txt | unique /u
 Command 'unique' not found, but can be installed with:
 apt install john
@@ -183,7 +190,7 @@ bandit8@bandit:~$ sort data.txt | /u
 bandit8@bandit:~$ sort data.txt | uniq -u
 4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
 bandit8@bandit:~$ 
-
+```
 
 
 
@@ -202,9 +209,9 @@ Steps:
 
 ![Screenshot]()
 
-
+```bash
 bandit9@bandit:~$ strings data.txt
-
+```
 
 
 Password: FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
@@ -262,6 +269,7 @@ I used the usage for tr to rotate the string 13 alphabets ahead.
 
 It's as follows:
 
+```bash 
 bandit11@bandit:~$ ls
 data.txt
 
@@ -270,7 +278,7 @@ Gur cnffjbeq vf 7k16JArUVv5LxVuJfsSVdbbtaHGlw9D4
 
 bandit11@bandit:~$ tr 'A-Za-z' 'N-ZA-Mn-za-m' <<< "7k16JArUVv5LxVuJfsSVdbbtaHGlw9D4"
 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
-
+```
 
 
 
