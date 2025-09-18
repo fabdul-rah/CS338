@@ -225,7 +225,7 @@ Level 10-11
 Steps:
 
 ![Screenshot](screenshots-bandit/bandit10.png)
-
+```bash
 bandit10@bandit:~$ ls
 data.txt
 bandit10@bandit:~$ data.txt
@@ -241,7 +241,7 @@ bandit10@bandit:~$ xxd data.txt
 bandit10@bandit:~$ base64 -d data.txt
 The password is dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
 bandit10@bandit:~$ 
-
+```
 
 
 Password: dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
