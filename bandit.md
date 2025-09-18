@@ -98,7 +98,7 @@ Used `find` to search for files of a specific size (33 bytes):
 ```bash
 find -type f -size 1033c
 ```
-![][screenshots-bandit/Screenshot 2025-09-17 at 10.31.29 AM.png]
+![Level 6 find output](screenshots-bandit/Screenshot 2025-09-17 at 10.31.29 AM.png)
 
 This revealed the directory containing the password file; navigating one directory deeper and repeating the command located the file with the password.
 
