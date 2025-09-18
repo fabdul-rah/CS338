@@ -1,196 +1,278 @@
-# Feraidon AbdulRahimzai
+Feraidon AbdulRahimzai
+Sep 16, 2025
+Computer Security
+OverTheWireBandit
+-------------------------------------------------------------------------------------------------------------------------
 
-**Date:** Sep 16, 2025
-**Course:** Computer Security
-**Challenge:** OverTheWire — Bandit
+Level 0
 
----
+Steps:
 
-## Level 0
+Login to Bandit using the following unix command: 
 
-**Steps**:
-
-Login to Bandit using the following UNIX command:
-
-```bash
 ssh -p 2220 bandit0@bandit.labs.overthewire.org
-```
 
-The password is given on the game's introduction page as: `bandit0`.
+The password is given to us in the introduction page of
+the game as: bandit0
 
----
 
-## Level 0 → 1
 
-**Steps:**
 
-Open `readme` using:
 
-```bash
-cat readme
-```
 
-The password for the next level is displayed.
+Level 0 -> 1
 
-**Password:** `ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If`
+Steps:
 
----
+Open readme using command: cat readme
 
-## Level 1 → 2
+Password would be displayed for the next level.
+Our password is: ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
 
-**Steps:**
 
-The file name contains a single dash (`-`) which can be interpreted as stdin. One approach is to use `rev -` to read and reverse the contents without treating `-` as an option, and then reverse again to recover the original.
 
-What I used:
 
-```bash
-rev - | rev
-```
 
-**Password:** `263JGJPfgU6LtdEvgfWU1XP5yac29mFx`
+Level 1 -> 2
 
----
 
-## Level 2 → 3
+Steps:
 
-**Steps:**
+Because "-" is an escape character we cannot just feed it 
+into the command line and hope for it to open a file of that name. 
+Instead I used rev -  to open the file without taking it in as an 
+escape character which automatically reverses it, hence we are able 
+to open it. Then I reversed the reversed password to get the actual 
+password by using rev again.
 
-![][screenshots-bandit/Screenshot 2025-09-16 at 8.45.23 PM.png]
+rev - | rev 
 
-**Password:** `MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx`
+Pasword: 263JGJPfgU6LtdEvgfWU1XP5yac29mFx
 
----
 
-## Level 3 → 4
 
-**Steps:**
 
-![][screenshots-bandit/Screenshot 2025-09-16 at 8.50.22 PM.png]
-**Password:** `2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ`
 
----
 
-## Level 4 → 5
 
-**Steps:**
 
-![][screenshots-bandit/Screenshot 2025-09-16 at 9.09.47 PM.png]
-**Password:** `4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw`
+Level 2 -> 3
 
----
+Steps:
 
-## Level 5 → 6
+![Screenshot](screenshots-bandit/bandit2.png)
 
-**Steps:**
 
-![][screenshots-bandit/Screenshot 2025-09-16 at 9.34.25 PM.png]
-**Password:** `HWasnPhtq9AVKe0dmk45nxy20cvUa6EG`
 
----
+Password: MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx
 
-## Level 6 → 7
 
-**Steps:**
 
-Used `find` to search for files of a specific size (33 bytes):
 
-```bash
-find -type f -size 1033c
-```
-![Level 6 find output](screenshots-bandit/Screenshot 2025-09-17 at 10.31.29 AM.png)
 
-This revealed the directory containing the password file; navigating one directory deeper and repeating the command located the file with the password.
 
-**Password:** `morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj`
 
----
 
-## Level 7 → 8
+Level 3-4
 
-**Steps:**
+Steps:
 
-Concatenate data.txt and then using command f
+![Screenshot](screenshots-bandit/bandit3.png)
 
-Then find the line corresponding to the word `millionth` and extract the associated password.
+Pasword: 2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ
 
-![][screenshots-bandit/Screenshot 2025-09-17 at 10.37.30 AM.png]
 
-**Password:** `dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc`
 
----
 
-## Level 8 → 9
 
-**Steps / Output:**
 
-Tried sorting and finding unique lines:
 
-```bash
-sort data.txt | uniq -u
-```
 
-The unique password found was:
 
-**Password:** `4CKMh1JI91bUIZZPXDqGanal4xvAg0JM`
+Level 4-5
 
----
+Steps:
 
-## Level 9 → 10
 
-**Steps:**
+![Screenshot](screenshots-bandit/bandit4.png)
+Password: 4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
 
-Used the `strings` utility to extract printable strings from a binary/text file:
 
-```bash
-strings data.txt
-```
 
-**Password:** `FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey`
 
----
 
-## Level 10 → 11
 
-**Steps:**
+Level 5-6
 
-Listed and examined `data.txt`:
+Steps:
 
-```bash
-cat data.txt
-# shows Base64 content: VGhlIHBhc3N3b3JkIGlzIGR0UjE3M2ZaS2IwUlJzREZTR3NnMlJXbnBOVmozcVJyCg==
-```
+![Screenshot](screenshots-bandit/bandit5.png)
 
-Decoded the Base64 using:
 
-```bash
-base64 -d data.txt
-```
+Password:HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
 
-Result:
 
-```
+
+
+
+
+Level 6-7
+
+Steps:
+
+![Screenshot](screenshots-bandit/bandit6-1.png)
+![Screenshot](screenshots-bandit/bandit6-2.png)
+
+
+
+bandit6@bandit:/$ find -type f -size 33c
+
+this showed me the directory it was in and 
+then I went a directory deeper and did the 
+same command to which then led me to the file 
+with the password
+
+
+Password: morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
+
+
+
+
+
+
+
+
+Level 7-8
+
+
+Steps:
+
+![Screenshot](screenshots-bandit/bandit7.png)
+
+
+bandit7@bandit:~$ 
+bandit7@bandit:~$ find -type f -name data
+bandit7@bandit:~$ ls
+data.txt
+bandit7@bandit:~$ cat data.txt
+
+
+and then I command f to find the word millionth and its correspondance password
+
+Password: dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
+
+
+
+
+
+Level 8-9
+
+Steps:
+![Screenshot]()
+
+
+
+output:
+
+bandit8@bandit:~$ sort data.txt | unique /u
+Command 'unique' not found, but can be installed with:
+apt install john
+Please ask your administrator.
+bandit8@bandit:~$ sort data.txt | /u
+-bash: /u: No such file or directory
+bandit8@bandit:~$ sort data.txt | uniq -u
+4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
+bandit8@bandit:~$ 
+
+
+
+
+Password:
+
+4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
+
+
+
+
+
+
+Level 9-10
+
+Steps:
+
+![Screenshot]()
+
+
+bandit9@bandit:~$ strings data.txt
+
+
+
+Password: FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
+
+
+
+
+
+Level 10-11
+
+Steps:
+
+![Screenshot](screenshots-bandit/bandit10.png)
+
+bandit10@bandit:~$ ls
+data.txt
+bandit10@bandit:~$ data.txt
+data.txt: command not found
+bandit10@bandit:~$ cat data.txt
+VGhlIHBhc3N3b3JkIGlzIGR0UjE3M2ZaS2IwUlJzREZTR3NnMlJXbnBOVmozcVJyCg==
+bandit10@bandit:~$ xxd data.txt
+00000000: 5647 686c 4948 4268 6333 4e33 6233 4a6b  VGhlIHBhc3N3b3Jk
+00000010: 4947 6c7a 4947 5230 556a 4533 4d32 5a61  IGlzIGR0UjE3M2Za
+00000020: 5332 4977 556c 4a7a 5245 5a54 5233 4e6e  S2IwUlJzREZTR3Nn
+00000030: 4d6c 4a58 626e 424f 566d 6f7a 6356 4a79  MlJXbnBOVmozcVJy
+00000040: 4367 3d3d 0a                             Cg==.
+bandit10@bandit:~$ base64 -d data.txt
 The password is dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
-```
+bandit10@bandit:~$ 
 
-**Password:** `dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr`
 
----
 
-## Level 11 → 12
+Password: dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
 
-**Steps:**
 
-The file contained a ROT13-encoded line. Using `tr` to perform ROT13 revealed the password:
 
-```bash
-cat data.txt
-# Gur cnffjbeq vf 7k16JArUVv5LxVuJfsSVdbbtaHGlw9D4
 
-tr 'A-Za-z' 'N-ZA-Mn-za-m' <<< "7k16JArUVv5LxVuJfsSVdbbtaHGlw9D4"
-# returns 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
-```
 
-**Password:** `7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4`
 
----
+
+
+
+
+
+
+
+Level 11-12
+
+Steps: 
+
+I read the documentation for the tr that was linked. 
+I concatenated the file first and I saw the password. 
+
+I used the usage for tr to rotate the string 13 alphabets ahead.
+
+It's as follows:
+
+bandit11@bandit:~$ ls
+data.txt
+
+bandit11@bandit:~$ cat data.txt
+Gur cnffjbeq vf 7k16JArUVv5LxVuJfsSVdbbtaHGlw9D4
+
+bandit11@bandit:~$ tr 'A-Za-z' 'N-ZA-Mn-za-m' <<< "7k16JArUVv5LxVuJfsSVdbbtaHGlw9D4"
+7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
+
+
+
+
+Password: 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
+
