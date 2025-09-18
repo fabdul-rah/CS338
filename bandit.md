@@ -217,7 +217,7 @@ Level 10-11
 
 Steps:
 
-![Screenshot](/Users/gemini/Desktop/Fall 2025/Computer Security/VS CODE CS338/screenshots-bandit/bandit10.png)
+![Screenshot](screenshots-bandit/bandit10.png)
 
 bandit10@bandit:~$ ls
 data.txt
