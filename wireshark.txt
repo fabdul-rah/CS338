@@ -1,0 +1,89 @@
+Feraidon AbdulRahimzai
+09/20/2025
+Computer Security
+
+'Getting Started with Wireshark'
+
+
+
+===== DAYTIME =====
+
+[1]. 
+
+1   192.168.64.2    129.6.15.28    TCP   40718 -> 13  [SYN]  Seq=0 Win=64240 Len=0 MSS=1460 .......
+2   129.6.15.28     192.168.64.2   TCP   13 -> 40718  [SYN, ACK]  Seq=0 Ack=1 .....
+3   192.168.64.2    129.6.15.28    TCP   40718 -> 13  [ACK]  Seq=1 Ack=1  ......
+
+[2].
+The client uses port number: 40718
+
+
+
+[3].
+The client needs a port in order to communicate on the network.
+A port is needed for sending packets and maintaining a connection 
+with other servers. 
+
+
+[4].
+
+4    129.6.15.28    192.168.64.2    DAYTIME    DAYTIME Response
+
+
+
+[5].
+[SYN] means synchronizing and is a flag that a client sends over 
+to the service to initiate the tcp handshake.
+
+[ACK] mean acknowledgement and is a flag that acknowledges that 
+a message or series of packets have been recieved.
+
+
+[6].
+The daytime server initiates the closing of the TCP connection 
+and it is determined by the [FIN, ACK] flag. This indicates that a 
+termination is being signled and so the next frame, we as the source 
+also give a [FIN, ACK] flag to indicate OK we recieved the data and 
+you can terminate/end the connection.
+
+
+===== HTTP =====
+
+
+[1].
+
+8 TCP connections were opened and we can tell by looking at the 
+protocol column after we add the filter to be tcp.flags.syn==1. 
+This tell the filter to only filter to the tcp flags that 
+synchrized, which I explained above, meaning that a request has been made.
+
+
+
+[2].
+
+Your homepage was requested in the 4th frame after the tcp handshake 
+specifically, as follows: 
+
+17    192.168.64.2    172.233.221.124    HTTP    GET /index.html HTTP/1.1
+
+
+[3].
+
+Your photograph from colorado was requested in the 8th frame:
+
+23    192.168.64.2    172.233.221.124    HTTP    GET /jeff-square-colorado.jpg HTTP/1.1
+
+
+
+
+
+===== QUESTIONS =====
+
+Does a connection only becomes successful after the client and server have sent 
+each other a TCP [SYN] and then the server sends an acknowledgement? 
+Is that the meaning of the TCP 3 way handshake?
+
+
+
+
+
