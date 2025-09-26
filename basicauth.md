@@ -31,3 +31,8 @@ command after the correct authentication gives us the html file for the /basicau
 
 **2.**
 ![image of credentials which are saved in the log of Wireshark](basicauth_Screenshots/wireshark-get-auth-credentials-saved.png)
+
+When I went through the reading on, HTTP's Basic Authentication, [Web page for the HTTP Basic Authentication Scheme](https://datatracker.ietf.org/doc/html/rfc7617), it was interesting to see how the colon (:) was used for the separation of the username from the password. I mention that because in the credentials I can see that the Base64 is already converted for us **from** ![image of base64 characters in wireshark from the authentication round](basicauth_Screenshots/base64-characters.png) **to** ![image of converted base64 encoding](basicauth_Screenshots/converted-base64-credentials.png). 
+
+As I mentioned, I see how the colon comes into play here. It is separating the username, *cs338* from the password, *Password*.
+
