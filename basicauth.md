@@ -49,3 +49,4 @@ I have now moved on to Burpsuite Community Edition to see what I can make out of
 ![basic auth burpsuite credentials given after the initial request](basicauth_Screenshots/credentials-from-burpsuite.png)
 
 
+I have to cut short my review on this because I have reached a point where there isn't any additional information for me to look at. In the end, I want to say that this process of basic http authentication might not be the safest option to lock up stuff within the browser as authentications are sent over the network and in a unencrypted way where you can easily decode from Base64. In both of the applications I was given the decoded base64 making it super easy for others to access this information.
