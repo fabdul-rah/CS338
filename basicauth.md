@@ -2,7 +2,10 @@
 ## CS338 - Basic Auth Assignment
 ### September 25, 2025
 
+____
 **Wireshark Info**
+____
+
 To start off, at this point in the observation, I am using Wireshark for the initial state of running our website and entering the given username and password. 
 
 ![This is an image of the initial entrance to the website using /basicauth/ and capturing it with Wireshark](basicauth_Screenshots/Wireshark-1st-shot.png)
@@ -38,8 +41,9 @@ When I went through the reading on, HTTP's Basic Authentication, [Web page for t
 As I mentioned, I see how the colon comes into play here. It is separating the username, *cs338* from the password, *password*.
 
 
-
+____
 **Burpsuite Info**
+____
 I have now moved on to Burpsuite Community Edition to see what I can make out of it. As soon as I send in requests and move forward with the interception. I am given the Base64 encoding of the username and the password in the *Request* panel and in the inspector. 
 
 ![basic auth burpsuite credentials given after the initial request](basicauth_Screenshots/credentials-from-burpsuite.png)
