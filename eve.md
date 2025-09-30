@@ -162,9 +162,19 @@ _______
 Answers to Questions: 
 _______
 
-**Why this breaks for large integers:**  
+**Why this breaks for large integers?**  
 
 I solved this by brute force (finding exponents \(a\) and \(b\)). That’s the *discrete logarithm problem*. With small \(p\) it’s easy, but with cryptographically large primes, discrete logs are computationally infeasible.
+
+
+**Where this would fail with big integers?**
+
+I obtained d because I could factor n. In a real RSA modulus, factoring the n is not computationally feasible, and that is the step that would fail.
+
+**Why the encoding is insecure (even if n were large)?**
+
+I think the encoding is insecure because there isn't any randomness in the RSA, so, if the same words or characters appear more than once, it will produce the same encrypted number every time. 
+
 
 
 
