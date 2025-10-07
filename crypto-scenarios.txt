@@ -1,0 +1,97 @@
+Feraidon AbdulRahimzai
+Computer Security - CS338
+October 06, 2025
+
+----- Cryptographic Scenarios -----
+
+
+-Notes to Self-
+
+Goals for each Scenario:
+
+- Describe as concisely as you can on how you would use the tools listed above to achieve the goals describer in the Scenarios
+- Briefly explain why your plan achieves those goals
+- Make plans as simple as possible given the goals fo the Scenario
+- Eve -> eavesdropper
+- Mal -> adversary-in-the-middle (AITM) attack
+
+
+
+-----Scenarios-----
+
+Scenario 1:
+
+Alice wants to send Bob a long message, and she doesn't want Eve to be able to read it. Assume for this scenario that AITM is impossible.
+
+
+Response:
+
+I want to think of this scenario as the very basic and first step of encryption, we want to encrypt the message using some sort of a key which will be used to decrypt it at some point along the way.
+We need to come up with an algorithm and a key. We then use those two things to encrypt and decrypt messages to each other.
+
+My plan achieves these goals as I am using some sort of encryption at the basic level to encrypt my message so that only the person, who is this case would be BOB, that has the key would be able to open/decrypt the message. 
+This would be a symmetric encyption with a chosen algorithm where the message M is encrypted using the key K. Preferably Diffie-Hellman key exchange.
+
+
+
+Scenario 2: 
+
+Alice wants to send Bob a long message. She doesn't want Mal to be able to modify the message without Bob detecting the change.
+
+Response:
+
+We are going to use a hash function to encrypt the content of the message into a fixed length hash using Alice's private key, E(S_A, H(M)), and then send the hash to Bob. Bob will use decrypt this by using Alice's public key as so, E(P_A, H(M)), now we have decrypted it and in order to see if there hasn't been any modifications to the message, we will use the same hash function to then see if our hashes match. If they do then, the message is not altered and it's indeed sent from Alice.
+
+
+Scenario 3:
+
+Alice wants to send Bob a long message (in this case, it's a signed contract between AliceCom and BobCom), she doesn't want Eve to be able to read it, and she wants Bob to have confidence that it was Alice who sent the message. Assume for this scenario that AITM is impossible.
+
+
+Response:
+
+Alice and Bob can generate a shared secret key using AES through the Diffie_Hellman exchange, this will ensure that Eve is not able to read the message. Alice is then going to sign the document by hashing the encrypted info with her private key, S = E(S_A, H(D)). BOb is now able to decrypt the hash by using Alices' Public key an compares it to his hash to confirm that it indeed came from Alice.
+
+
+Scenario 4:
+
+Consider a scenario where Alice and Bob have been in contract negotiations and sharing documents electronically along the way. Suppose Bob sues Alice for breach of contract and presents as evidence the digitally signed contract (C || Sig) and Alice's public key P_A. Here, C contains some indication that Alice has agreed to the contract—e.g., if C is a PDF file containing an image of Alice's handwritten signature. Sig, on the other hand is a digital signature, as described at 9:23 or so of the Cryptographic Hash Functions video.
+
+Suppose Alice says in court "C is not the contract I sent to Bob". (This is known as repudiation in cryptographic vocabulary.) Alice will now need to explain to the court what she believes happened that enabled Bob to end up with an erroneous contract. List at least three things Alice could claim happened. For each of Alice's claims, state briefly how plausible you would find the claim if you were the judge. (Assume that you, the judge, studied cryptography in college.)
+
+Response:
+
+Alice could say for instance that Bob stole her secret key and used it to generate a fake signature. This would work because you would essentially be impersonating Alice and can modify and completely change the Messages and Signature to validate such scenarios. What I seem plausible would be that Bob threatened Alice in person and took the key. Alice could also claim that Bob somehow got access to Alices computer and stole her private key and then generated signatures. This is a somewhat plausible response in my opinion, as it is similar to getting it in a threat situation but you aren't sure for a definite answer. Another claim could be that Bob was able to crack how the hash and change stuff up. This is impossible and not plausable as hash functions are known to be irreversable.
+
+
+
+Scenario 5: 
+For this scenario, suppose the assumption that everybody has everybody else's correct public keys is no longer true. Instead, suppose we now have a certificate authority CA, and that everybody has the correct P_CA (i.e. the certificate authority's key). Suppose further that Bob sent his public key P_B to CA, and that CA then delivered to Bob this certificate:
+
+Cert_B = "bob.com" || P_B || Sig_CA
+In terms of P_CA, S_CA, H, E, etc., of what would Sig_CA consist? That is, show the formula CA would use to compute Sig_CA.
+
+Response:
+
+The formula would be like this, Sig_CA = E(S_CA, H(P_B)). This is the hash of the public key for Bob encrypted by the secret key of the Certificate Authority. Alice is able to take this signature and decrypt it with third party's public key and get a hash of Bobs public key.
+
+
+
+Scenario 6: 
+
+Bob now has the certificate Cert_B from the previous question. During a communication, Bob sends Alice Cert_B. Is that enough for Alice to believe she's talking to Bob? (Hint: no.) What could Alice and Bob do to convince Alice that Bob has the S_B that goes with the P_B in Cert_B?
+
+Response: 
+
+In order to confirm that Bob is actually Bob and that the certificate belongs to him, Alice sends a challenge to prove that. This makes sure that Bob has the correct private key that goes with the public key.
+
+
+
+Scenario 7: 
+
+Finally, list at least two ways the certificate-based trust system from the previous two questions could be subverted, allowing Mal to convince Alice that Mal is Bob.
+
+Response: 
+
+1. Mal stealing Bob's private key can allow Mal to impersonate Bob and pass any challenge questions easily. 
+2. Mal stealing the certificate authority's private key and signing fake certificates to allow for such a bypass.
