@@ -88,11 +88,11 @@ Some of information that would be useful to me as the developer of Beerz2.0 that
 - Evaluate risks: Analyze what could go wrong if the data was to be leaked or misused. Write risk reports to the CTO outlining the potencial risks of sellig data.
 
 
-## 
+## F.
+#
 
 #
-#
-F. My recommended action to get user data and to be able to sell it without hurting the business and the customers is by sort of making a system which allows location data from the phone only when they are close to each physical brewery. Specifically, instead of constantly tracking user GPS, the Beerz app detects when a user’s phone connects to or is near a brewery’s Wi-Fi network. If they remain in that area for at least 5 minutes, then the app records a “visit” for aggregate analytics. 
+ My recommended action to get user data and to be able to sell it without hurting the business and the customers is by sort of making a system which allows location data from the phone only when they are close to each physical brewery. Specifically, instead of constantly tracking user GPS, the Beerz app detects when a user’s phone connects to or is near a brewery’s Wi-Fi network. If they remain in that area for at least 5 minutes, then the app records a “visit” for aggregate analytics. 
 
 
 
