@@ -2,12 +2,20 @@
 ## CS338 - Computer Security
 ### October 14, 2025
 
-
+#
+#
 
 # ===== Scenario #2 - Beerz2.0 =====
 
 
-## A. The main ethical questions faced by me as the main character in this scenario are as follows:
+
+#
+#
+## A. 
+#
+#
+
+The main ethical questions faced by me as the main character in this scenario are as follows:
 
 1. How will this data be stored and kept safe from unwanted acess?
 2. Which information to keep from the data? All of the raw data or custom parameters, or minimized?
@@ -20,7 +28,8 @@ Now these are just a few things I could list and I know that this could go on fu
 
 
 ## B.
-
+#
+#
 List of Stakeholders and their relevant rights:
 
 - Users/Customers: Expect thier location data to remain private and short-lived
@@ -36,7 +45,10 @@ List of Stakeholders and their relevant rights:
 - Breweries: Attract customers, recieve accurate metrics for popularity
 
 
-## C. Some of information that would be useful to me as the developer of Beerz2.0 that is missing from the scenario would be:
+## C. 
+#
+#
+Some of information that would be useful to me as the developer of Beerz2.0 that is missing from the scenario would be:
 
 - Who we're selling this data to?
 - If we do archive this data, how long are we keeping it? 
@@ -45,7 +57,11 @@ List of Stakeholders and their relevant rights:
 
 
 
-## D. Some actions that I would take to help the app succeed and prevent any sort of information disclosure would be as follows:
+## D.
+
+#
+#
+ Some actions that I would take to help the app succeed and prevent any sort of information disclosure would be as follows:
 
 1. The very first thing I would do as the ethical/developer person is to expalin the issues that could arise from implementing a feature that stores data. The app/company could collapse if the trust between them and users is broken. This is also good for transparency and decision making for the company despite their short term gains. If this doesn't work then the actions below:
 2. Disassociate the users actual identification.
@@ -55,7 +71,10 @@ List of Stakeholders and their relevant rights:
 
 
 
-## E. The ACM Code of Ethics offers some relevant guidance such as follow:
+## E.
+#
+#
+ The ACM Code of Ethics offers some relevant guidance such as follow:
 
 - Avoid Harm: In our case this could mean that sharing the location data could possibly be associated with people using patterns even if anonymized. Could lead to physical and emotional harm such as stalking, and re-identification.
 
@@ -69,7 +88,11 @@ List of Stakeholders and their relevant rights:
 - Evaluate risks: Analyze what could go wrong if the data was to be leaked or misused. Write risk reports to the CTO outlining the potencial risks of sellig data.
 
 
-## F. My recommended action to get user data and to be able to sell it without hurting the business and the customers is by sort of making a system which allows location data from the phone only when they are close to each physical brewery. Specifically, instead of constantly tracking user GPS, the Beerz app detects when a user’s phone connects to or is near a brewery’s Wi-Fi network. If they remain in that area for at least 5 minutes, then the app records a “visit” for aggregate analytics. 
+## 
+
+#
+#
+F. My recommended action to get user data and to be able to sell it without hurting the business and the customers is by sort of making a system which allows location data from the phone only when they are close to each physical brewery. Specifically, instead of constantly tracking user GPS, the Beerz app detects when a user’s phone connects to or is near a brewery’s Wi-Fi network. If they remain in that area for at least 5 minutes, then the app records a “visit” for aggregate analytics. 
 
 
 
