@@ -111,6 +111,19 @@ Look at me with my fancy Javascript.
 
 
 
+### c.
+
+A virulent attack could be phishing for credentials. The script could erase the entire FDF page and replace it with a fake "Session Expired - Please Log In Again" form. When Alice enters her password, it would be sent to Moriary's server.
+
+### d. 
+
+Another attack that could be more virulent than Moriarty's but different from my first Idea would be to somehow gain access to become an admin who can then delete all of the posts or do all sorts of things with that privilege. So essentially like an admin-hijack to get hgih level access.
+
+### e.
+
+A technique the server or the browser could use to prevent what Moriarty is doing is by not allowing code from the posts to run at all. This significantly reduces the attacks to almost none. The main vulnerability of this is the allowing of JavaScript code into the form itself. But in the absence of that we can edit our sever side code to encode the the stored text so that it remains as plain text intead of executing. So the (<) signs could be encoding into something else which will not allow it to execute.
+
+
 
 
 
