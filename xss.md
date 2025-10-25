@@ -122,8 +122,3 @@ Another attack that could be more virulent than Moriarty's but different from my
 ### e.
 
 A technique the server or the browser could use to prevent what Moriarty is doing is by not allowing code from the posts to run at all. This significantly reduces the attacks to almost none. The main vulnerability of this is the allowing of JavaScript code into the form itself. But in the absence of that we can edit our sever side code to encode the the stored text so that it remains as plain text intead of executing. So the (<) signs could be encoding into something else which will not allow it to execute.
-
-
-
-
-
