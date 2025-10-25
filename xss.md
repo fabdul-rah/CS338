@@ -50,7 +50,64 @@ Burp Suite has it own sort of cookie container called a cookie jar which is stor
 
 ## Part 2: Cross-Site Scripting (XSS)
 
+### a. 
 
+- Reflected XSS Attacks
+- Stored XSS Attacks
+- Blind Cross-site Scripting
+- DOM-based XSS 
+
+Link: https://owasp.org/www-community/attacks/xss/
+
+
+### b.
+
+Look at me with my fancy Javascript. 
+```bash
+<script>alert('Mwah-ha-ha-ha!');</script>
+```
+
+- This is a Stored XSS attack. This is stored on the FDF's server and is later served to any user who views the page containinf Moriarty's post.
+
+[Moriarty ]
+       |
+       | 1. POST request with malicious payload:
+       |    "<script>alert(...)</script>"
+       V
+[FDF Server ]
+       |
+       | 2. VULNERABILITY: Server fails to clear it.
+       |
+       V
+ [Database ]
+       |
+       | 3. Malicious script is STORED.
+       |
+[Victim ]
+       |
+       | 4. Normal GET request to view the FDF page.
+       |
+       V
+[FDF Server ]
+       |
+       | 5. Server retrieves page content,
+       |    including the malicious script
+       |    from the database.
+       |
+       V
+  [Victim ]
+       |
+       | 6. Server sends the full HTML
+       |    (with the <script>) to the victim's browser.
+       |
+       V
+[Victim's Browser]
+       |
+       | 7. Browser renders HTML and EXECUTES
+       |    the malicious script.
+       |
+       V
+  (Popup Alert!)
 
 
 
