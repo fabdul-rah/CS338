@@ -18,7 +18,7 @@ www-data
 
 #### b.
 
-- The <pre> tag displays the output of system commands with its original formatting.
+- The < pre > tag displays the output of system commands with its original formatting.
 
 
 
