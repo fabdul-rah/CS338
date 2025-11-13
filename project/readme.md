@@ -11,7 +11,7 @@ The main deliverable is in the form of a blog which is accessible through the "M
 
 **Link:** https://medium.com/@feraidon.a.rahimzai/think-your-password-is-strong-hackers-would-disagree-879de9391486
 
-**Github Link:** https://github.com/fabdul-rah/Password-Generator-and-Tester
+**Github Link:** https://github.com/fabdul-rah/Password-Tester-and-Generator
 
 
 ---
